@@ -55,18 +55,15 @@ while (number !== 23 && counter < 5)  {
 }
 
 
-var country = ['Colombia', 'Ireland', 'Spain', 'Austria', 'Netherlands'];
-country = country.toLowerCase();
-var answer1 = prompt('Can you guess one of my favorite countries I\'ve visited?');
-var flag = true;
+var country = ['colombia', 'ireland', 'spain', 'austria', 'netherlands'];
+for (var i = 0, l = country.length; i < l; i++) {
+  var answer1 = prompt('Can you guess one of my favorite countries I\'ve visited?').toLowerCase();
+  console.log('User\'s Answer: ', answer1);
 
-for (var i=0; i < country.length; i++) {
-console.log('current thing:', country[i]);
-
-  if (answer === country[i]) {
-    alert('Wow, good guess! I love that part of the world..')
-  }
-}
-  if (!flag) {
+  if (country.includes(answer1)) {
+    alert('Wow, good guess! I love that part of the world..');
+    break;
+  } else {
     alert('Nah, not there.')
   }
+}
